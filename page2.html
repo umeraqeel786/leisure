@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leisure Club</title>
+
+ <link rel="shortcut icon"  href="favi.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+  /*create magnifier glass:*/
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+  /*insert magnifier glass:*/
+  img.parentElement.insertBefore(glass, img);
+  /*set background properties for the magnifier glass:*/
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+  /*execute a function when someone moves the magnifier glass over the image:*/
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+  /*and also for touch screens:*/
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+  function moveMagnifier(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    /*prevent the magnifier glass from being positioned outside the image:*/
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    /*set the position of the magnifier glass:*/
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    /*display what the magnifier glass "sees":*/
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+</head>
+<body>
+<header class="header">
+
+</header>
+
+<div class="aa">
+<h1><b>LEISURE CLUB</b></h1>
+
+<input class="sea" type="text" name="search" placeholder="Search..">
+</div>
+
+
+<div class="navbar1 ab">
+  <div class="dropdown">
+    <button class="dropbtn">NEW ARRIVAL 
+     </button>
+    <div class="dropdown-content">
+        <div class="row">
+        <div class="column">
+          <img src="11.jpg" style="width:20%;height:30%;float:left"><a href="#"><p>Men</p></a>
+          <img src="12.jpg" style="width:20%;height:30%;float:left;"><a href="#">Girls</a>
+		  <br>
+		  <img src="13.jpg" style="width:20%;height:30%;float:left;margin-left:-20%"><a href="#"><p>Kids party line</p></a>
+          
+        </div>
+        <div class="column">
+         <img src="15.jpg" style="width:20%;height:30%;float:left"><a href="#">Women</a>
+		 <br>
+          <img src="16.jpg" style="width:20%;height:30%;float:left;margin-left:-20%;"><a href="#">Baby boy</a>
+          <br>
+		  <img src="17.jpg" style="width:20%;height:30%;float:left;margin-left:-19%"><a href="#">Lc pents</a>
+        </div>
+        <div class="column">
+         <img src="18.jpg" style="width:20%;height:30%;float:left"><a href="#">Boys</a>
+          <img src="19.jpg" style="width:20%;height:30%;float:left;margin-left:-20%"><a href="#">Baby girls</a>
+        </div>
+		 <img src="5.jpg" style="width:13%; height:8%;float:right;margin-top:-18%;margin-right:2%">
+		 
+      </div>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">MEN 
+      </button>
+    <div class="dropdown-content">
+      <div class="row">
+        <div class="column">
+          <h4>TOPS & T-SHIRTS</h4>
+          <a href="#">Sweatshirts</a>
+          <a href="#">T-Shirts</a>
+          <a href="#">Polo</a>
+     </div>
+        <div class="column">
+          <h4>NIGHT WEAR</h4>
+          <a href="#">Night suit</a>
+          <a href="#">Body suit</a>
+          <a href="#">Longwear Top Bottom</a>
+        </div>
+        <div class="column">
+          <h4>BOTTOMS</h4>
+          <a href="#">Jeans</a>
+          <a href="#">Dress pents</a>
+          <a href="#">Touser</a>
+        </div>
+		<img src="6.jpg" style="width:13%; height:8%;float:right;margin-top:-18%;margin-right:2%">
+		 
+      </div>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">WOMEN 
+    </button>
+    <div class="dropdown-content">
+       <div class="row">
+        <div class="column">
+          <h4>TOP & T-SHIRTS</h4>
+          <a href="#">Top</a>
+          <a href="#">T-shirts</a>
+          <a href="#">Cami</a>
+		  <a href="#">Suit</a>
+          <a href="#">Sweatshirts</a>
+		  
+        </div>
+        <div class="column">
+          <h4>OUTERWEAR</h4>
+          <a href="#">Cardigan</a>
+          <a href="#">Pullover</a>
+          <a href="#">Jackets</a>
+        </div>
+        <div class="column">
+          <h4>NIGHTWEAR 3</h4>
+          <a href="#">Night suit</a>
+       </div>
+	   <div class="column">
+          <h4>ACTIVE WEAR</h4>
+		  <a href="#">Track touser</a>
+        </div>
+		<div class="column">
+          <h4>BOTTOMS</h4>
+		  <a href="#">Jeans</a>
+          <a href="#">Tights</a>
+		  <a href="#">Touser</a>
+        </div>
+		<img src="7.jpg" style="width:13%; height:8%;float:right;margin-top:-18%;margin-right:2%">
+		
+      </div>
+    </div>
+  </div> 
+
+  <div class="dropdown">
+    <button class="dropbtn">KIDS 
+    </button>
+    <div class="dropdown-content">
+      <div class="row">
+        <div class="column">
+          <h4>BOYS</h4>
+          <a href="#">T-Shirts</a>
+          <a href="#">Outerwear</a>
+          <a href="#">Bottoms</a>
+        </div>
+        <div class="column">
+          <h4>BABY GIRLS</h4>
+          <a href="#">T-Shirts & Tops</a>
+          <a href="#">Accessories</a>
+          <a href="#">Footwear</a>
+        </div>
+        <div class="column">
+          <h4>BABY BOYS</h4>
+          <a href="#">Outerwear</a>
+          <a href="#">Bottoms</a>
+          <a href="#">T-Shirts & Tops</a>
+          </div>
+		  <img src="8.jpg" style="width:13%; height:8%;float:right;margin-top:-18%;margin-right:2%">
+		
+      </div>
+    </div>
+  </div> 
+<div class="dropdown">
+    <button class="dropbtn">EASTERN 
+    </button>
+    <div class="dropdown-content">
+       <div class="row">
+        <div class="column">
+          <a href="#">Men</a>
+          <a href="#">Girls</a>
+          <a href="#">Kids party wear</a>
+        </div>
+        <div class="column">
+          <a href="#">Women</a>
+          <a href="#">Baby boy</a>
+          <a href="#">Lc pents</a>
+        </div>
+        <div class="column">
+          <a href="#">Boys</a>
+          <a href="#">Baby girls</a>
+        </div>
+		<img src="9.jpg" style="width:13%; height:8%;float:right;margin-top:-18%;margin-right:2%">
+		
+      </div>
+    </div>
+  </div> 
+
+  <div class="dropdown">
+    <button class="dropbtn">DISCOUNT 
+    </button>
+    <div class="dropdown-content">
+	
+       <div class="row">
+        <div class="column">
+          <img src="11.jpg" style="width:20%;height:30%;float:left"><a href="#"><p>Men</p></a>
+          <img src="12.jpg" style="width:20%;height:30%;float:left;"><a href="#">Girls</a>
+		  <br>
+		  <img src="13.jpg" style="width:20%;height:30%;float:left;margin-left:-20%"><a href="#"><p>Kids party line</p></a>
+          
+        </div>
+        <div class="column">
+         <img src="15.jpg" style="width:20%;height:30%;float:left"><a href="#">Women</a>
+		 <br>
+          <img src="16.jpg" style="width:20%;height:30%;float:left;margin-left:-20%;"><a href="#">Baby boy</a>
+          <br>
+		  <img src="17.jpg" style="width:20%;height:30%;float:left;margin-left:-19%"><a href="#">Lc pents</a>
+        </div>
+        <div class="column">
+         <img src="18.jpg" style="width:20%;height:30%;float:left"><a href="#">Boys</a>
+          <img src="19.jpg" style="width:20%;height:30%;float:left;margin-left:-20%"><a href="#">Baby girls</a>
+        </div>
+		 
+      </div>
+    </div>
+  </div> 
+</div>
+
+
+<hr>
+<div class="aq">
+<b>Free Shipping On Local Orders For Above PKR 2,500/ | </b>Orders will be delivered in 3-5 working days | Call us on : 021-35305953
+</div>
+<hr>
+ <br>
+ <br>
+<div class="img-magnifier-container adp">
+  <img id="myimage" src="09.jpg" width="100%" height="100%">
+</div>
+<script>
+/* Initiate Magnify Function
+with the id of the image, and the strength of the magnifier glass:*/
+magnify("myimage", 3);
+</script>
+ 
+<div class="add">
+
+
+<h1 style="font-family:Georgia">Red Shirt Single</h1>
+<h3 style="float:left;margin-top:-7%;margin-left:65%;color:#8c8c8c"><del>2,456<del></h3>
+<h1 style="float:right;margin-top:-9%;color:#e62e00;font-family:Times">PKR 1,928</h1>
+<h4 style="font-family:Palatino, serif;color:#4d4d4d"><b>Product Code:</b><b style="font-family:monospace;font-size:15px">MW825-15B4-Q48DS</b></h4>
+<h4 style="font-family:Courier New;font:#4d4d4d"><b>SIZE:<b> L | M | S  </h4>
+<h4 style="font-family:Georgia;color:#4d4d4d">SELECT QUANTITY</h4>
+<br>
+<button style="width:100%;height:15%;background-color:#333333;color:white;font-family:Arial"><a href="order.html">ADD TO CHART</a></button>
+<hr>
+<br>
+<h4 style="font-family:Monaco;color:#4d4d4d">DESCRIPTION</h4>
+
+<hr>
+<h4 style="font-family:Palatino;color:#4d4d4d">3-5 WORKING DAYS | 10-12 WORKING DAYS</h4>
+<h4>Share:<a href="#" class="fa fa-facebook"></a><a href="#" class="fa fa-instagram"></a></h4>
+</div>
+
+ <div style="margin-top:50%" class="footer">
+<div style="float:left; width:15%;margin-top:3%;">
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Trebuchet MS, Helvetica, sans-serif">ABOUT</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">OUR STORY</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">STORES</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">CONTACT</h4>
+</div>
+<div style="float:left; width:15%;margin-top:3%">
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Trebuchet MS, Helvetica, sans-serif">SHIPPING GUID</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">SIZE CHART</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">PRIVACY POLICY</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">FAQ's</h4>
+</div>
+<div style="float:left; width:15%;margin-top:3%">
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Trebuchet MS, Helvetica, sans-serif">MY ACCOUNT</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">ACCOUNT INFO</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">ADDRESSES</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">ORDER HISTORY</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Courier New, Courier, monospace">TRACK ORDER</h4>
+</div>
+<div style="float:left; width:15%;margin-top:3%">
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Trebuchet MS, Helvetica, sans-serif">JOIN US</h4>
+<h4 style="color:#a6a6a6;padding-left:10%;font-family:Lucida Sans Unicode"><a href="#" class="fa fa-facebook"></a><a href="#" class="fa fa-instagram"></a></h4>
+</div>
+
+<div style="float:right; margin-top:3% ;padding-top:-15%;padding-right:5%;">
+
+<h4 style="padding-left:10%;font-family:Trebuchet MS, Helvetica, sans-serif">LEISURE CLUB NEWSLETTER</h4>
+    <input class="foinput" type="text" id="fname" name="firstname" placeholder="Email Address..">
+<input class="fosub" type="submit" value="SUBMIT">
+</div>
+
+
+</div>
+
+	</body>
+</html>

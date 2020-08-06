@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+header{
+	margin-top:-1%;
+	margin-left:-1%;
+	background-color:black;
+	padding:2%;
+}
+</style>
+
+<body>
+
+<div class="aa">
+<h1><b>LEISURE CLUB</b></h1>
+
+</div>
+
+<h1>Place Your Order</h1>
+
+<div>
+  <form action="insertOrder.php" method="post">
+    <label>First Name</label>
+    <input type="text" name="Firstname" placeholder="Your name..">
+
+    <label>Last Name</label>
+    <input type="text" name="Lastname" placeholder="Your last name..">
+
+	<label>Size</label>
+    <select id="country" name="country">
+      <option value="australia">Small</option>
+      <option value="canada">Medium</option>
+      <option value="usa">Large</option>
+    </select>
+  
+    <label>Address</label>
+    <input type="text" name="Address" placeholder="Your Address..">
+
+    <label>Phone</label>
+    <input type="text" name="Phone" placeholder="Your Phone..">
+
+    <label>City</label>
+    <input type="text" name="City" placeholder="Your city..">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
