@@ -1,7 +1,6 @@
-Material Design for Bootstrap
+# Leisure club website
+Architected with HTML CSS Phpmyadmin SQL
 
-Version: MDB Free 4.7.4
-
-Run the lesisue file in any web browser.
+# Run/open lesisue.html file in any web browser.
 
 
